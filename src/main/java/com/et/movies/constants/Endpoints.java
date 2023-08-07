@@ -29,7 +29,7 @@ public class Endpoints {
     public static final String DELETE_USER = "User/delete/{user_id}";
     public static final String GET_All_USERS = "Users/get";
     public static final String SIGNUP = "Users/singup";
-    public static final String SIGNIN = "Users/singip";
+    public static final String SIGNIN = "Users/singin";
 
 
 }
