@@ -18,10 +18,12 @@ import org.springframework.web.bind.annotation.*;
 public class BookingController {
     private final BookingService bookingService;
     private static final String JSON = MediaType.APPLICATION_JSON_VALUE;
+    @PreAuthorize("hasAuthority('USER')")
     @PostMapping(value = Endpoints.BOOK_TICKET, consumes = JSON, produces = JSON)
     public ResponseDTO<?> bookTicket(@RequestBody @Valid BookingRequestDto bookingRequestDto) {
         return bookingService.bookTicket(bookingRequestDto);
     }
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping(value = Endpoints.GET_All_BOOKING,produces = JSON)
     public ResponseDTO<?> getBooking(){
         return bookingService.getBooking();
