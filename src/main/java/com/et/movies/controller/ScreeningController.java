@@ -42,4 +42,5 @@ public class ScreeningController {
                                         @RequestParam(required = false)String genre){
       return screeningService.getScreening(movie_title,genre);
  }
+
 }
